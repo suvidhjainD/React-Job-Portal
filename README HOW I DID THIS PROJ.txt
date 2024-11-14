@@ -13,3 +13,5 @@ Clerk for authentication
 (Learn useEffect )
 
 From clerk we use useUser for Proted routes
+
+react hook forms is used and zod

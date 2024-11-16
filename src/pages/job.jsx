@@ -32,9 +32,8 @@ const JobPage = () => {
   } = useFetch(updateHiringStatus, { job_id: id });
 
   const handelStatusChange = (value) => {
-    console.log(value);
     const isOpen = value === "open";
-    console.log(isOpen);
+
     fnHiringStatus(isOpen).then(() => fbSingleJob());
   };
 
@@ -47,6 +46,10 @@ const JobPage = () => {
   if (!isLoaded || loadingSingleJob) {
     return <BarLoader className="mb-4" width={"100%"} color="blue" />;
   }
+
+  // console.log(
+  //   "a" + Singlejob?.applications?.find((a) => a.candidate_id === user.id)
+  // );
 
   return (
     <div>
@@ -106,7 +109,7 @@ const JobPage = () => {
         <h2 className=" text-2xl font-bold sm:text-3xl pb-5 pt-5  ">
           Requirements
         </h2>
-        <p>{Singlejob?.requirements} </p>{" "}
+        <p>{Singlejob?.requirements} </p>
         {/*add a list for requirement for UI can us MD ediot already installed*/}
         {/* render application */}
       </div>
@@ -116,9 +119,9 @@ const JobPage = () => {
             job={Singlejob}
             user={user}
             fetchJob={fbSingleJob}
-            applied={Singlejob?.applications?.find((ap) => {
-              ap.candidate_id === user.id;
-            })}
+            applied={Singlejob?.applications?.find(
+              (ap) => ap.candidate_id === user.id
+            )}
           />
         )}
       </div>

@@ -14,4 +14,7 @@ Clerk for authentication
 
 From clerk we use useUser for Proted routes
 
-react hook forms is used and zod
+react hook forms is used and zod is used for managing<forms> in job when we apply job
+//learn more abt react hook form and zod its complex
+
+
